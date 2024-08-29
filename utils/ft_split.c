@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brian <brian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bryeap <bryeap@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 20:00:33 by brian             #+#    #+#             */
-/*   Updated: 2024/08/29 17:35:27 by brian            ###   ########.fr       */
+/*   Updated: 2024/08/29 21:06:13 by bryeap           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ static char	**split(char const *s, char c, char **mem, int len)
 	int	j;
 	int	k;
 
-	i = 0;
+	i = 1;
 	j = 0;
-	while (i < count_words((char *)s, c))
+	while (i <= count_words((char *)s, c))
 	{
 		while (s[j] && s[j] == c)
 			j++;
@@ -70,9 +70,10 @@ char	**ft_split(char const *s, char c)
 
 	len = 0;
 	words = count_words((char *)s, c);
-	mem = (char **)malloc(sizeof(char *) * (words + 1));
+	mem = (char **)malloc(sizeof(char *) * (words + 2));
 	if (!mem)
 		return (NULL);
+	mem[0] = NULL;
 	mem = split(s, c, mem, len);
 	if (!mem)
 		return (NULL);

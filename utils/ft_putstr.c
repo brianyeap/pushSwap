@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bryeap <bryeap@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 19:15:16 by bryeap            #+#    #+#             */
-/*   Updated: 2024/08/29 21:29:54 by bryeap           ###   ########.fr       */
+/*   Created: 2024/08/29 21:22:00 by bryeap            #+#    #+#             */
+/*   Updated: 2024/08/29 21:30:48 by bryeap           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char **argv)
+static void	ft_putchar(char c)
 {
-	t_stack_node	a;
-	t_stack_node	b;
-	int				i;
+	write(1, &c, 1);
+}
 
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (1);
-	else if (argc == 2)
-		argv = ft_split(argv[1], ' ');
-	argv = argv + 1;
+void	ft_putstr(char *s)
+{
+	int	i;
+
 	i = 0;
-	while (argv[i])
+	while (s[i])
 	{
-		printf("argv[%d]: %s\n", i, argv[i]);
+		ft_putchar(s[i]);
 		i++;
 	}
-	return (0);
 }
+
