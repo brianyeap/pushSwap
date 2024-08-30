@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_error.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bryeap <bryeap@student.42.fr>              +#+  +:+       +#+        */
+/*   By: brian <brian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 20:19:46 by bryeap            #+#    #+#             */
-/*   Updated: 2024/08/29 22:13:01 by bryeap           ###   ########.fr       */
+/*   Updated: 2024/08/30 03:54:09 by brian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,16 @@ int	error_check_string(char *str)
 {
 	int	i;
 
+
 	i = 0;
-	if (!(str[i] == '+' || str[i] == '-' || (str[i] > '0' && str[i] < '9')))
+	if (!(str[i] == '+' || str[i] == '-' || (str[i] >= '0' && str[i] <= '9')))
 		return (1);
-	if ((str[i] == '+'
-			|| str[i] == '-') && !(str[i + 1] > '0' && str[i + 1] < '9'))
+	if ((str[i] == '+' || str[i] == '-') && !(str[i + 1] >= '0' && str[i + 1] <= '9'))
 		return (1);
+	i++;
 	while (str[i])
 	{
-		if (!(str[i + 1] > '0' && str[i + 1] < '9'))
+		if (!(str[i] >= '0' && str[i] <= '9'))
 			return (1);
 		i++;
 	}

@@ -1,6 +1,6 @@
 Library = push_swap
 
-CFILES = $(wildcard *.c utils/*.c)
+CFILES = $(wildcard *.c utils/*.c commands/*.c)
 OFILES = $(CFILES:.c=.o)
 
 Compiler = gcc
