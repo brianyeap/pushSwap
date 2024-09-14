@@ -6,7 +6,7 @@
 /*   By: brian <brian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 20:14:13 by bryeap            #+#    #+#             */
-/*   Updated: 2024/08/30 04:00:16 by brian            ###   ########.fr       */
+/*   Updated: 2024/09/15 01:25:31 by brian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,43 @@ void	init_stack_a(t_stack_node **a, char **argv)
 		n = ft_atol(argv[i]);
 		if (n < INT_MIN || n > INT_MAX)
 			free_and_error(a);
+		if (error_check_duplicate(*a, (int)n))
+			free_and_error(a);
 		append_node(a, (int)n);
 		i++;
+	}
+}
+
+t_stack_node	*get_cheapest_node(t_stack_node	*stack)
+{
+	if (!stack)
+		return (NULL);
+	while (stack)
+	{
+		if (stack->cheapest)
+			return (stack);
+		stack = stack->next;
+	}
+	return (NULL);
+}
+
+void	prep_for_push(t_stack_node **stack, t_stack_node *top_node, char stack_type)
+{
+	while (*stack != top_node)
+	{
+		if (stack_type == 'a')
+		{
+			if (top_node->above_median)
+				ra(stack, true);
+			else
+				rra(stack, true);
+		}
+		else if (stack_type == 'b')
+		{
+			if (top_node->above_median)
+				rb(stack, true);
+			else
+				rrb(stack, true);
+		}
 	}
 }

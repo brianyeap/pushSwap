@@ -6,22 +6,18 @@ OFILES = $(CFILES:.c=.o)
 Compiler = gcc
 Flags =  -Wall -Wextra -Werror
 
-OUTN = $(Library).a
+OUTN = $(Library)
 NAME = $(OUTN)
 
 all: $(NAME)
 
 $(NAME): $(OFILES)
-	ar -cr $(OUTN) $(OFILES)
-
-# %.o: %.c
-# 	$(Compiler) $(Flags) -c $< -o $@ -I./
+	$(Compiler) $(Flags) -o $(OUTN) $(OFILES)
 
 %.o: %.c
-	$(Compiler) -c $< -o $@ -I./
+	$(Compiler) $(Flags) -c $< -o $@ -I./
 
 dev: fclean $(OFILES) $(NAME)
-	$(Compiler) $(Flags) -o a.out main.o $(NAME)
 
 clean:
 	rm -rf $(OFILES)
