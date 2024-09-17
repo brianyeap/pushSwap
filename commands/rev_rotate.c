@@ -6,7 +6,7 @@
 /*   By: brian <brian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 23:01:37 by brian             #+#    #+#             */
-/*   Updated: 2024/09/15 00:08:01 by brian            ###   ########.fr       */
+/*   Updated: 2024/09/18 00:33:58 by brian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void rev_rotate(t_stack_node **stack)
 {
 	t_stack_node *last;
 
-	if (!*stack || (*stack)->next)
+	if (!*stack || !(*stack)->next)
 		return;
 	last = find_last(*stack);
 	last->prev->next = NULL;

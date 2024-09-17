@@ -6,7 +6,7 @@
 /*   By: brian <brian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 05:20:12 by brian             #+#    #+#             */
-/*   Updated: 2024/09/12 22:09:22 by brian            ###   ########.fr       */
+/*   Updated: 2024/09/17 22:15:56 by brian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	pa(t_stack_node **a, t_stack_node **b, bool print)
 		ft_putstr("pa\n");
 }
 
-void	pb(t_stack_node **a, t_stack_node **b, bool print)
+void	pb(t_stack_node **b, t_stack_node **a, bool print)
 {
 	push(b, a); 
 	if (print) 

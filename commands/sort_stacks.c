@@ -6,7 +6,7 @@
 /*   By: brian <brian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 05:20:46 by brian             #+#    #+#             */
-/*   Updated: 2024/09/15 01:05:03 by brian            ###   ########.fr       */
+/*   Updated: 2024/09/18 00:28:00 by brian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,17 @@ static void	min_on_top(t_stack_node **a)
 	}
 }
 
+void print_stack(t_stack_node *a)
+{
+    printf("Stack a: ");
+    while (a)
+    {
+        printf("%d ", a->nbr);
+        a = a->next;
+    }
+    printf("\n");
+}
+
 void	sort_stacks(t_stack_node **a, t_stack_node **b)
 {
 	int	len_a;
@@ -80,7 +91,7 @@ void	sort_stacks(t_stack_node **a, t_stack_node **b)
 	sort_three_node(a);
 	while (*b)
 	{
-		init_nodes_a(*a, *b);
+		init_nodes_b(*a, *b);
 		move_b_to_a(a, b);
 	}
 	current_index(*a);
