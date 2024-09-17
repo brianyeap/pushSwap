@@ -6,7 +6,7 @@
 /*   By: brian <brian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 17:14:33 by brian             #+#    #+#             */
-/*   Updated: 2024/09/15 01:25:52 by brian            ###   ########.fr       */
+/*   Updated: 2024/09/18 00:49:39 by brian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
-
-// temporary
-# include <stdio.h>
 
 typedef struct s_stack_node
 {
@@ -34,43 +31,41 @@ typedef struct s_stack_node
 }	t_stack_node;
 
 // Libft Utils
-void	ft_putstr(char *s);
-char	**ft_split(char const *s, char c);
+void			ft_putstr(char *s);
+char			**ft_split(char const *s, char c);
 
-// Push Swap
-void	free_and_error(t_stack_node **a);
-int		error_check_string(char *str);
-int		error_check_duplicate(t_stack_node *a, int n);
+// Free and error
+void			free_and_error(t_stack_node **a);
+int				error_check_string(char *str);
+int				error_check_duplicate(t_stack_node *a, int n);
+void			free_stack(t_stack_node **a);
 
 // Utils
-bool	is_stack_sorted(t_stack_node *stack);
-int		len_stack(t_stack_node	*node);
+bool			is_stack_sorted(t_stack_node *stack);
+int				len_stack(t_stack_node	*node);
 t_stack_node	*find_last(t_stack_node *stack);
 t_stack_node	*find_max(t_stack_node *stack);
 t_stack_node	*find_min(t_stack_node *stack);
-
+t_stack_node	*get_cheapest_node(t_stack_node	*stack);
 
 // Commands
-void	sa(t_stack_node **node, bool print);
-void	ra(t_stack_node **node, bool print);
-void	rb(t_stack_node **node, bool print);
-void	rr(t_stack_node **a, t_stack_node **b, bool print);
-void	rra(t_stack_node **node, bool print);
-void	rrb(t_stack_node **node, bool print);
-void	rrr(t_stack_node **a, t_stack_node **b, bool print);
-void	pa(t_stack_node **a, t_stack_node **b, bool print);
-void	pb(t_stack_node **a, t_stack_node **b, bool print);
+void			sa(t_stack_node **node, bool print);
+void			ra(t_stack_node **node, bool print);
+void			rb(t_stack_node **node, bool print);
+void			rr(t_stack_node **a, t_stack_node **b, bool print);
+void			rra(t_stack_node **node, bool print);
+void			rrb(t_stack_node **node, bool print);
+void			rrr(t_stack_node **a, t_stack_node **b, bool print);
+void			pa(t_stack_node **a, t_stack_node **b, bool print);
+void			pb(t_stack_node **a, t_stack_node **b, bool print);
 
-void	sort_three_node(t_stack_node	**a);
-void	init_stack_a(t_stack_node **a, char **argv);
-void	init_nodes_a(t_stack_node *a, t_stack_node *b);
-void	current_index(t_stack_node *stack);
-t_stack_node	*get_cheapest_node(t_stack_node	*stack);
-void	prep_for_push(t_stack_node **stack, t_stack_node *top_node, char stack_type);
-
-void	init_nodes_b(t_stack_node *a, t_stack_node *b);
-void	sort_stacks(t_stack_node **a, t_stack_node **b);
-void	free_stack(t_stack_node **a);
-int		error_check_duplicate(t_stack_node *a, int n);
+// Algo and prep for push
+void			init_stack_a(t_stack_node **a, char **argv);
+void			init_nodes_a(t_stack_node *a, t_stack_node *b);
+void			init_nodes_b(t_stack_node *a, t_stack_node *b);
+void			sort_three_node(t_stack_node	**a);
+void			current_index(t_stack_node *stack);
+void			prep_for_push(t_stack_node **stack, t_stack_node *top_node, char stack_type);
+void			sort_stacks(t_stack_node **a, t_stack_node **b);
 
 #endif
