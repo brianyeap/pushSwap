@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_a_to_b.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brian <brian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bryeap <bryeap@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 18:51:11 by brian             #+#    #+#             */
-/*   Updated: 2024/09/15 01:13:52 by brian            ###   ########.fr       */
+/*   Updated: 2024/09/27 22:19:50 by bryeap           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	current_index(t_stack_node *stack)
 {
 	int	i;
-	int median;
+	int	median;
 
 	if (!stack)
 		return ;
@@ -64,7 +64,7 @@ static void	set_target_a(t_stack_node *a, t_stack_node *b)
 static void	cost_analysis_a(t_stack_node *a, t_stack_node *b)
 {
 	int	len_a;
-	int len_b;
+	int	len_b;
 
 	len_a = len_stack(a);
 	len_b = len_stack(b);
@@ -98,7 +98,7 @@ void	set_cheapest(t_stack_node *stack)
 		}
 		stack = stack->next;
 	}
-	cheapest_node->cheapest =  true;
+	cheapest_node->cheapest = true;
 }
 
 void	init_nodes_a(t_stack_node *a, t_stack_node *b)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brian <brian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bryeap <bryeap@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 17:14:33 by brian             #+#    #+#             */
-/*   Updated: 2024/09/18 00:49:39 by brian            ###   ########.fr       */
+/*   Updated: 2024/09/27 22:29:48 by bryeap           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int				error_check_duplicate(t_stack_node *a, int n);
 void			free_stack(t_stack_node **a);
 
 // Utils
+void			min_on_top(t_stack_node **a);	
 bool			is_stack_sorted(t_stack_node *stack);
 int				len_stack(t_stack_node	*node);
 t_stack_node	*find_last(t_stack_node *stack);
@@ -65,7 +66,7 @@ void			init_nodes_a(t_stack_node *a, t_stack_node *b);
 void			init_nodes_b(t_stack_node *a, t_stack_node *b);
 void			sort_three_node(t_stack_node	**a);
 void			current_index(t_stack_node *stack);
-void			prep_for_push(t_stack_node **stack, t_stack_node *top_node, char stack_type);
+void			prep_for_push(t_stack_node **stack,
+					t_stack_node *top_node, char stack_type);
 void			sort_stacks(t_stack_node **a, t_stack_node **b);
-
 #endif

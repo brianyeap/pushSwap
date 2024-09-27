@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   rev_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brian <brian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bryeap <bryeap@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 23:01:37 by brian             #+#    #+#             */
-/*   Updated: 2024/09/18 00:33:58 by brian            ###   ########.fr       */
+/*   Updated: 2024/09/27 22:20:55 by bryeap           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void rev_rotate(t_stack_node **stack)
+static void	rev_rotate(t_stack_node **stack)
 {
-	t_stack_node *last;
+	t_stack_node	*last;
 
 	if (!*stack || !(*stack)->next)
-		return;
+		return ;
 	last = find_last(*stack);
 	last->prev->next = NULL;
 	last->next = *stack;

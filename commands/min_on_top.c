@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   min_on_top.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bryeap <bryeap@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 21:22:00 by bryeap            #+#    #+#             */
-/*   Updated: 2024/09/27 22:25:43 by bryeap           ###   ########.fr       */
+/*   Created: 2024/09/27 22:29:07 by bryeap            #+#    #+#             */
+/*   Updated: 2024/09/27 22:29:27 by bryeap           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	ft_putchar(char c)
+void	min_on_top(t_stack_node **a)
 {
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
+	while ((*a)->nbr != find_min(*a)->nbr)
 	{
-		ft_putchar(s[i]);
-		i++;
+		if (find_min(*a)->above_median)
+			ra(a, true);
+		else
+			rra(a, true);
 	}
 }

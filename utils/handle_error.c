@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_error.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brian <brian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bryeap <bryeap@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 20:19:46 by bryeap            #+#    #+#             */
-/*   Updated: 2024/09/15 01:11:22 by brian            ###   ########.fr       */
+/*   Updated: 2024/09/27 22:25:09 by bryeap           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ int	error_check_string(char *str)
 {
 	int	i;
 
-
 	i = 0;
 	if (!(str[i] == '+' || str[i] == '-' || (str[i] >= '0' && str[i] <= '9')))
 		return (1);
-	if ((str[i] == '+' || str[i] == '-') && !(str[i + 1] >= '0' && str[i + 1] <= '9'))
+	if ((str[i] == '+' || str[i] == '-')
+		&& !(str[i + 1] >= '0' && str[i + 1] <= '9'))
 		return (1);
 	i++;
 	while (str[i])

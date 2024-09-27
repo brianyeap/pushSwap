@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brian <brian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bryeap <bryeap@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 02:45:48 by brian             #+#    #+#             */
-/*   Updated: 2024/08/31 03:45:29 by brian            ###   ########.fr       */
+/*   Updated: 2024/09/27 22:26:10 by bryeap           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-
 static void	rotate(t_stack_node	**stack)
 {
 	t_stack_node	*last_node;
-	
+
 	if (!*stack || !(*stack)->next)
 		return ;
 	last_node = find_last(*stack);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brian <brian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bryeap <bryeap@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 20:14:13 by bryeap            #+#    #+#             */
-/*   Updated: 2024/09/18 00:33:15 by brian            ###   ########.fr       */
+/*   Updated: 2024/09/27 22:24:29 by bryeap           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	append_node(t_stack_node **stack, int n)
 {
 	t_stack_node	*node;
 	t_stack_node	*last_node;
-	
+
 	if (!stack)
 		return ;
 	node = malloc(sizeof(t_stack_node));
@@ -60,7 +60,6 @@ static void	append_node(t_stack_node **stack, int n)
 		node->prev = last_node;
 	}
 }
-
 
 void	init_stack_a(t_stack_node **a, char **argv)
 {
@@ -95,7 +94,8 @@ t_stack_node	*get_cheapest_node(t_stack_node	*stack)
 	return (NULL);
 }
 
-void	prep_for_push(t_stack_node **stack, t_stack_node *top_node, char stack_type)
+void	prep_for_push(t_stack_node **stack,
+	t_stack_node *top_node, char stack_type)
 {
 	while (*stack != top_node)
 	{
